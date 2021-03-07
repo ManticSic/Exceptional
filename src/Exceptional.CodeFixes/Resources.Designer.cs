@@ -59,14 +59,5 @@ namespace Exceptional {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Make uppercase.
-        /// </summary>
-        internal static string CodeFixTitle {
-            get {
-                return ResourceManager.GetString("CodeFixTitle", resourceCulture);
-            }
-        }
     }
 }

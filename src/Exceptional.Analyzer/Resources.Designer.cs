@@ -61,29 +61,47 @@ namespace Exceptional.Analyzer {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Type names should be all uppercase..
+        ///   Looks up a localized string similar to &apos;{0}&apos; cannot be empty..
         /// </summary>
-        internal static string AnalyzerDescription {
+        internal static string ArgumentException_CannotBeEmpty {
             get {
-                return ResourceManager.GetString("AnalyzerDescription", resourceCulture);
+                return ResourceManager.GetString("ArgumentException_CannotBeEmpty", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Type name &apos;{0}&apos; contains lowercase letters.
+        ///   Looks up a localized string similar to &apos;{0}&apos; cannot contain only whitespace..
         /// </summary>
-        internal static string AnalyzerMessageFormat {
+        internal static string ArgumentException_CannotContainOnlyWhitespaces {
             get {
-                return ResourceManager.GetString("AnalyzerMessageFormat", resourceCulture);
+                return ResourceManager.GetString("ArgumentException_CannotContainOnlyWhitespaces", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Type name contains lowercase letters.
+        ///   Looks up a localized string similar to Exception is neither documented nor caught..
         /// </summary>
-        internal static string AnalyzerTitle {
+        internal static string EX1001_Description {
             get {
-                return ResourceManager.GetString("AnalyzerTitle", resourceCulture);
+                return ResourceManager.GetString("EX1001_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} is neither documented nor caught..
+        /// </summary>
+        internal static string EX1001_Message {
+            get {
+                return ResourceManager.GetString("EX1001_Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Thrown exception is neither documented nor caught..
+        /// </summary>
+        internal static string EX1001_Title {
+            get {
+                return ResourceManager.GetString("EX1001_Title", resourceCulture);
             }
         }
     }

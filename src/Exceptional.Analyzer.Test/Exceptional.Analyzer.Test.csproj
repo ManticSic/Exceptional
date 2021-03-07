@@ -28,4 +28,11 @@
         <ProjectReference Include="..\Exceptional.CodeFixes\Exceptional.CodeFixes.csproj"/>
     </ItemGroup>
 
+    <ItemGroup>
+        <Compile Remove="Assets\**"/>
+        <Content Include="Assets\**">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+    </ItemGroup>
+
 </Project>
