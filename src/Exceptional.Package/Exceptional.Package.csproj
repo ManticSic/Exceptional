@@ -1,0 +1,46 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <IncludeBuildOutput>false</IncludeBuildOutput>
+        <SuppressDependenciesWhenPacking>true</SuppressDependenciesWhenPacking>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <LangVersion>9</LangVersion>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <PackageId>Exceptional</PackageId>
+        <PackageVersion>1.0.0-alpha</PackageVersion>
+        <Authors>Darius</Authors>
+        <!--    <PackageLicenseUrl>http://LICENSE_URL_HERE_OR_DELETE_THIS_LINE</PackageLicenseUrl>-->
+        <!--    <PackageProjectUrl>http://PROJECT_URL_HERE_OR_DELETE_THIS_LINE</PackageProjectUrl>-->
+        <!--    <PackageIconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</PackageIconUrl>-->
+        <!--    <RepositoryUrl>http://REPOSITORY_URL_HERE_OR_DELETE_THIS_LINE</RepositoryUrl>-->
+        <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+        <Description>Roslyn Exceptional Analyzer</Description>
+        <!--    <PackageReleaseNotes>Summary of changes made in this release of the package.</PackageReleaseNotes>-->
+        <Copyright>Copyright (c) 2021 Darius Weber</Copyright>
+        <PackageTags>exceptions, exceptional</PackageTags>
+        <NoPackageAnalysis>false</NoPackageAnalysis>
+
+        <TargetsForTfmSpecificContentInPackage>$(TargetsForTfmSpecificContentInPackage);_AddAnalyzersToOutput</TargetsForTfmSpecificContentInPackage>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Exceptional.Analyzer\Exceptional.Analyzer.csproj"/>
+        <ProjectReference Include="..\Exceptional.CodeFixes\Exceptional.CodeFixes.csproj"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Update="tools\*.ps1" CopyToOutputDirectory="Always" Pack="true" PackagePath=""/>
+    </ItemGroup>
+
+    <Target Name="_AddAnalyzersToOutput">
+        <ItemGroup>
+            <TfmSpecificPackageFile Include="$(OutputPath)\Exceptional.Analyzer.dll" PackagePath="analyzers/dotnet/cs"/>
+            <TfmSpecificPackageFile Include="$(OutputPath)\Exceptional.CodeFixes.dll" PackagePath="analyzers/dotnet/cs"/>
+        </ItemGroup>
+    </Target>
+
+</Project>
